@@ -1,0 +1,3 @@
+import ArgumentParser
+
+Alfred.main()
