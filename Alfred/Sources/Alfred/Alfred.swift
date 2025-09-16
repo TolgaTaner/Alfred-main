@@ -8,7 +8,7 @@ struct Alfred: ParsableCommand {
     )
 }
 
-// .build/release/alfred move-template VIPER
+//.build/release/alfred move-template VIPER
 struct MoveTemplate: ParsableCommand {
     static var configuration = CommandConfiguration(
         abstract: "Copy and paste given .xctemplate to Xcode templates."
