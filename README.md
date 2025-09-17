@@ -1,115 +1,44 @@
-# 🧰 Alfred – Xcode Template & Snippet Manager
+# Alfred-main 🛠️
 
-**Alfred** is a lightweight, Swift-based command-line tool that helps you manage custom Xcode file templates (`.xctemplate`) and code snippets (`.codesnippet`). Designed for iOS/macOS developers who want to save time and streamline their project setup.
-
----
-
-## 🚀 Features
-
-- 📦 Install custom `.xctemplate` folders into Xcode's Templates directory  
-- ✂️ Copy `.codesnippet` files to Xcode's User Code Snippets folder  
+**Alfred** is a lightweight Swift-based command-line tool that helps you manage custom Xcode templates (`.xctemplate`) and code snippets (`.codesnippet`) with ease.
 
 ---
 
-## 📦 Installation
+## 🔧 Installation
 
-### 1. Clone and build
-
-```bash
-git clone https://github.com/yourusername/alfred.git
-cd alfred
-swift build -c release
-```
-
-### 2. (Optional) Add to PATH
+Install via [Homebrew](https://brew.sh):
 
 ```bash
-sudo cp .build/release/Alfred /usr/local/bin/alfred
-```
+brew tap TolgaTaner/tap
+brew install alfredtt
 
-> You can now run `alfred` from anywhere in your terminal.
+alfredtt move-template VIPER
 
----
+Usage
 
-## 🛠️ Usage
+Install an Xcode Template
 
-### 📁 Install an Xcode template
+To copy a .xctemplate folder into Xcode’s custom templates directory:
 
-```bash
-alfred install VIPER
-```
+alfredtt move-template TemplateName
 
-Copies `VIPER.xctemplate` from the current directory to:
+Example:
 
-```
-~/Library/Developer/Xcode/Templates/Custom/
-```
+If you have a folder called VIPER.xctemplate in your current directory:
+alfredtt move-template VIPER
 
----
+✅ This will copy the folder to:
+~/Library/Developer/Xcode/Templates/Custom/VIPER.xctemplate
 
-### ✂️ Install code snippets
+Install Xcode Snippets
 
-```bash
-alfred install-snippets MySnippets
-```
+To move .codesnippet files from a local folder into Xcode:
+alfredtt install-snippets SnippetFolderName
 
-Copies all `.codesnippet` files from the `MySnippets` folder to:
+Example:
+alfredtt install-snippets MySnippets
 
-```
+✅ This will copy all .codesnippet files to:
 ~/Library/Developer/Xcode/UserData/CodeSnippets/
-```
 
----
 
-### 🔧 Manual installation (without Alfred)
-
-If you'd like to install templates or snippets manually, you can use the following Terminal commands:
-
-#### 🧩 Copy a `.xctemplate` file manually
-
-```bash
-mkdir -p "$HOME/Library/Developer/Xcode/Templates/Custom"
-cp -R ./VIPER.xctemplate "$HOME/Library/Developer/Xcode/Templates/Custom/"
-```
-
-#### ✂️ Copy `.codesnippet` files manually
-
-```bash
-mkdir -p "$HOME/Library/Developer/Xcode/UserData/CodeSnippets"
-cp ./MySnippets/*.codesnippet "$HOME/Library/Developer/Xcode/UserData/CodeSnippets/"
-```
-
----
-
-## 📁 Example Project Structure
-
-```
-alfred/
-├── Sources/
-│   └── Alfred/
-│       └── main.swift
-├── VIPER.xctemplate/
-├── MySnippets/
-│   ├── debugLog.codesnippet
-│   └── initView.codesnippet
-```
-
----
-
-## 🧰 Requirements
-
-- macOS  
-- Swift 5.9 or newer  
-- Xcode installed  
-
----
-
-## 📄 License
-
-MIT License
-
----
-
-## 🤝 Contributing
-
-Feel free to submit issues or pull requests. Contributions are welcome — especially ideas for useful developer workflows and automation.
