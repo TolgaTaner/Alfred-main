@@ -9,16 +9,16 @@ import XCTest
 final class ___VARIABLE_productName:identifier___PresenterTests: XCTestCase {
 
     var presenter: ___VARIABLE_productName:identifier___Presenter!
-    var view: MockView!
-    var interactor: MockInteractor!
-    var builder: MockBuilder!
+    var view: Mock___VARIABLE_productName:identifier___View!
+    var interactor: Mock___VARIABLE_productName:identifier___Interactor!
+    var builder: Mock___VARIABLE_productName:identifier___Builder!
 
     override func setUp() {
         super.setUp()
         presenter = ___VARIABLE_productName:identifier___Presenter()
-        view = MockView()
-        interactor = MockInteractor()
-        builder = MockBuilder()
+        view = Mock___VARIABLE_productName:identifier___View()
+        interactor = Mock___VARIABLE_productName:identifier___Interactor()
+        builder = Mock___VARIABLE_productName:identifier___Builder()
 
         presenter.view = view
         presenter.interactor = interactor
@@ -41,14 +41,3 @@ final class ___VARIABLE_productName:identifier___PresenterTests: XCTestCase {
     }
 }
 
-// MARK: - Mock Classes
-
-final class MockView: ___VARIABLE_productName:identifier___ViewProtocol { }
-
-final class MockInteractor: ___VARIABLE_productName:identifier___InteractorProtocol {
-    weak var presenter: ___VARIABLE_productName:identifier___InteractorOutputProtocol?
-}
-
-final class MockBuilder: ___VARIABLE_productName:identifier___ModuleProtocol {
-    static func createModule() -> UIViewController { UIViewController() }
-}

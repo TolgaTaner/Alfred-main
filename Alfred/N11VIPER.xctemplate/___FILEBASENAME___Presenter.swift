@@ -8,7 +8,7 @@ import Foundation
 final class ___VARIABLE_productName:identifier___Presenter: ___VARIABLE_productName:identifier___PresenterProtocol {
     weak var view: ___VARIABLE_productName:identifier___ViewProtocol?
     var interactor: ___VARIABLE_productName:identifier___InteractorProtocol?
-    var builder: ___VARIABLE_productName:identifier___ModuleBuilder?
+    var builder: ___VARIABLE_productName:identifier___ModuleProtocol?
 }
 
 // MARK: - ___VARIABLE_productName:identifier___InteractorOutputProtocol
